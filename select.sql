@@ -1,9 +1,10 @@
 /**
-  This script creates a database named "company" and a table named "employees" with columns
-  for employee id, name, age, and salary. It also inserts some sample data into the table
-  and performs a few SELECT queries on the data.
+  The SELECT keyword  is the basic and most used statement in the SQL.
+  It is used to retrieve data from one or more database tables. It designates
+  certain rows and columns to acquire from a table or collection of tables
  */
 
+-- Database setup
 CREATE DATABASE company;
 GO
 USE company;
@@ -12,7 +13,7 @@ GO
 -- Create a sample table
 CREATE TABLE employees
 (
-    id     INT PRIMARY KEY,
+    id     INT,
     name   VARCHAR(255),
     age    INT,
     salary FLOAT
@@ -38,5 +39,6 @@ FROM employees;
 SELECT id, salary
 FROM employees;
 
+-- Cleanup
 USE master;
 DROP DATABASE company;

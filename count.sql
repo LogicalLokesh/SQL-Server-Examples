@@ -1,7 +1,11 @@
 /**
-  Use the COUNT function in SQL to count the number of rows in a table.
+  The COUNT SQL keyword is used to return the number of rows or non-null values in
+  a table that satisfy a given criteria. It frequently works in tandem with the
+  SELECT statement to retrieve data from a table and determine how many rows meet
+  a specific requirement.
  */
 
+-- Database setup
 CREATE DATABASE collage;
 GO
 USE collage;
@@ -10,7 +14,7 @@ GO
 -- Create a sample table
 CREATE TABLE students
 (
-    id   INT PRIMARY KEY,
+    id   INT,
     name VARCHAR(50),
     age  INT,
     city VARCHAR(50)
@@ -37,5 +41,6 @@ FROM students;
 SELECT COUNT(city)
 FROM students;
 
+-- Cleanup
 USE master;
 DROP DATABASE collage;
