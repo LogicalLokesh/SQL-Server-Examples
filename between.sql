@@ -13,7 +13,7 @@ USE grocery_store;
 -- Create a sample table for products
 CREATE TABLE products
 (
-    id       INT,
+    id       INT PRIMARY KEY ,
     name     VARCHAR(50),
     price    DECIMAL(10, 2),
     quantity INT
@@ -41,6 +41,30 @@ WHERE quantity BETWEEN 50 AND 100;
 SELECT *
 FROM products
 WHERE price NOT BETWEEN 100 AND 200;
+
+/**
+  Other example using DATE datatype.
+ */
+
+-- Create a sample table for customers
+CREATE TABLE customers
+(
+id INT PRIMARY KEY,
+first_name VARCHAR(50),
+last_name VARCHAR(50),
+payment_date DATE
+);
+
+-- Insert some sample data
+INSERT INTO customers (id, first_name, last_name, payment_date)
+VALUES (1, 'Aarav', 'Kumar', '2022-01-03'),
+(2, 'Aditi', 'Singh',  '2022-02-01'),
+(3, 'Aryan', 'Sharma',  '2022-02-15'),
+(4, 'Divya', 'Patel', '2022-01-20'),
+(5, 'Gaurav', 'Joshi', '2022-02-10');
+
+-- Get all customers whose payment date is between '01-01-2022' and '15-02-2022'
+SELECT * from customers WHERE payment_date BETWEEN '2022-01-01' AND '2022-01-20';
 
 -- Cleanup
 USE master;
